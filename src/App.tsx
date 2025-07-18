@@ -1,19 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Todolist} from "./Todolist";
 
 function App() {
+    debugger
     return (
         <div className="App">
             <Todolist/>
+            <Todolist/>
+            <Todolist/>
         </div>
     );
-}
-
-function Todolist() {
-    return (
-        <div>TODOLIST</div>
-    )
 }
 
 export default App;
