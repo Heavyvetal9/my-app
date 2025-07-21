@@ -22,11 +22,6 @@ function App() {
                       tasks={tasks}
                       removeTask={removeTask}
             />
-
-            <Todolist title={'What to learn'}
-                      tasks={tasks}
-                      removeTask={removeTask}
-            />
         </div>
     );
 }
