@@ -7,7 +7,7 @@ function App() {
     let tasks = [
         {id: 1, title: 'CSS', isDone: true},
         {id: 2, title: 'JS', isDone: true},
-        // {id: 3, title: 'React', isDone: false}
+        {id: 3, title: 'React', isDone: false}
     ]
 
     function removeTask(id: number) {
