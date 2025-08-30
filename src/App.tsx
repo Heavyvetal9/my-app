@@ -23,19 +23,19 @@ function App() {
         setFilter(value);
     }
 
-    let tasksForTodolist = tasks;
-    if (filter === 'Complete') {
-        tasksForTodolist = tasks.filter(t => t.isDone)
-    }
-    if (filter === 'Active') {
-        tasksForTodolist = tasks.filter(t => !t.isDone)
-    }
+    // let tasksForTodolist = tasks;
+    // if (filter === 'Complete') {
+    //     tasksForTodolist = tasks.filter(t => t.isDone)
+    // }
+    // if (filter === 'Active') {
+    //     tasksForTodolist = tasks.filter(t => !t.isDone)
+    // }
 
 
     return (
         <div className="App">
             <Todolist title={'What to learn'}
-                      tasks={tasksForTodolist}
+                      tasks={tasks}
                       removeTask={removeTask}
                       changeFilter={changeFilter}
             />
