@@ -82,7 +82,8 @@ export function Todolist(props: PropsType) {
                     }
                 </ul>
                 <div>
-                    <button className={props.filter === 'All' ? 'active-filter' : ''} onClick={onAllClickHandler}>All
+                    <button className={props.filter === 'All' ? 'active-filter' : ''}
+                            onClick={onAllClickHandler}>All
                     </button>
                     <button className={props.filter === 'Active' ? 'active-filter' : ''}
                             onClick={onActiveClickHandler}>Active

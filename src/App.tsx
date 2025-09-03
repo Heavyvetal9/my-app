@@ -16,8 +16,8 @@ function App() {
     let [filter, setFilter] = useState<FilterValuesType>('All')
 
     function removeTask(id: string) {
-        let filteredTasks = tasks.filter((t) => t.id !== id)
-        setTasks(filteredTasks)
+        // let filteredTasks = tasks.filter((t) => t.id !== id)
+        // setTasks(filteredTasks)
     }
 
     function addTasks(title: string) {
