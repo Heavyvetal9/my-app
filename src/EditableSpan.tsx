@@ -9,8 +9,8 @@ export function EditableSpan(props: EditableSpanPropsType) {
     let [editMode, setEditMode] = useState(false);
     let [title, setTitle] = useState('');
     const activeEditMode = () => {
-        setEditMode(true);
-        setTitle (props.title);
+        // setEditMode(true);
+        // setTitle (props.title);
     }
     const activeViewMode = () => {
         setEditMode(false);
