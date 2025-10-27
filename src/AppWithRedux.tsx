@@ -42,7 +42,7 @@ function AppWithRedux() {
     }, [dispatch])
 
     const changeStatus = useCallback(function (id: string, isDone: boolean, todolistId: string) {
-        // dispatch(changeTaskStatusAC(id, isDone, todolistId));
+        dispatch(changeTaskStatusAC(id, isDone, todolistId));
     }, [dispatch])
 
     const changeTaskTitle = useCallback(function (id: string, newTitle: string, todolistId: string) {
