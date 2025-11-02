@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
-import './App.css';
-import {TaskType, Todolist} from "./Todolist";
+import React from 'react';
+import '../App.css';
+import {TaskType, Todolist} from "../Todolist";
 import {v1} from "uuid";
-import {AddItemForm} from "./AddItemForm";
+import {AddItemForm} from "../AddItemForm";
 import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from '@mui/material';
 import {Menu} from '@mui/icons-material';
+import {useTodolists} from "./hooks/useTodolists";
+import {useTasks} from "./hooks/useTasks";
 
 export type FilterValuesType = 'All' | 'Active' | 'Complete';
 
@@ -19,6 +21,9 @@ export type TasksStateType = {
 }
 
 function App() {
+    let [todolists, setTodolists] = useTodolists();
+    const [tasksObj, setTasks] = useTasks();
+
     function removeTask(id: string, todolistId: string) {
         let tasks = tasksObj[todolistId];
         let filteredTasks = tasks.filter((t) => t.id !== id);
@@ -60,13 +65,6 @@ function App() {
         }
     }
 
-    let todolistId1 = v1();
-    let todolistId2 = v1();
-
-    let [todolists, setTodolists] = useState<Array<TodolistType>>([
-        {id: todolistId1, title: 'What to learn', filter: 'All'},
-        {id: todolistId2, title: 'What to buy', filter: 'All'}
-    ])
 
     let removeTodolist = (todolistId: string) => {
         let filteredTodolist = todolists.filter(tl => tl.id !== todolistId)
@@ -83,15 +81,6 @@ function App() {
         }
     }
 
-    let [tasksObj, setTasks] = useState<TasksStateType>({
-        [todolistId1]: [
-            {id: v1(), title: 'CSS', isDone: true},
-            {id: v1(), title: 'JS', isDone: true},
-            {id: v1(), title: 'React', isDone: false}],
-        [todolistId2]: [
-            {id: v1(), title: 'book', isDone: true},
-            {id: v1(), title: 'milk', isDone: false}]
-    })
 
     function addTodolist(title: string) {
         let todolist: TodolistType = {
@@ -143,7 +132,7 @@ function App() {
                         }
 
                         return <Grid>
-                            <Paper style={{padding: '10px'}} >
+                            <Paper style={{padding: '10px'}}>
                                 <Todolist key={tl.id}
                                           id={tl.id}
                                           title={tl.title}
