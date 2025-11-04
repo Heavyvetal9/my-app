@@ -14,6 +14,7 @@ import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC} from "..
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootState} from "../state/store";
 import {useAppWithRedux} from "./useAppWithRedux";
+import {GetTodolists} from "../todolists-api";
 
 export type FilterValuesType = 'All' | 'Active' | 'Complete';
 
