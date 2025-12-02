@@ -15,8 +15,8 @@ export const EditableSpan = React.memo(function (props: EditableSpanPropsType) {
         setTitle(props.title);
     }
     const activeViewMode = () => {
-        setEditMode(false);
-        props.onChange(title)
+        // setEditMode(false);
+        // props.onChange(title)
     };
     const onChangeTitleHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setTitle(e.currentTarget.value)
